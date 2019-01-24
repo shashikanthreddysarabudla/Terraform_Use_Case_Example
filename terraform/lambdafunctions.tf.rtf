@@ -1,0 +1,20 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red27\green31\blue34;\red244\green246\blue249;
+}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c14118\c16078\c18039;\cssrgb\c96471\c97255\c98039;
+}
+\margl1440\margr1440\vieww38200\viewh18580\viewkind0
+\deftab720
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
+resource "aws_lambda_function" "s3-dynamo" \{\
+	filename = "$\{var.lambda_build\}"\
+	function_name = "
+\f1\fs23\fsmilli11900 \cf3 \cb4 $\{var-env\}-
+\f0\fs24 \cf2 \cb1 s3-dynamo\'93\
+	handler = \'93function.index\'94\
+	role = "$\{aws_iam_role.s3-dynamo-lambda.arn\}"\
+\}\
+}
